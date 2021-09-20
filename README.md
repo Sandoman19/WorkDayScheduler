@@ -6,6 +6,6 @@ It runs in the browser and features dynamically updated HTML and CSS powered by 
 I have updated my code to save the information entered automatically.
 There is also a clear all button at the bottom of the screen.
 
-![Project Screenshot](assets/photos/BasicScreen.PNG)
+![Project Screenshot](Assets/Photos/BasicScreen.PNG)
 ![Project Screenshot](assets/photos/daySchedulerBeingUsed.PNG)
 ![Project Screenshot](assets/photos/daySchedulerClearButton.PNG)
