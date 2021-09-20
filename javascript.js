@@ -3,7 +3,6 @@ $(document).ready(function () {// this will stop moment() not being defined.
     // on blur event used to save infomation to the local without pressing save button
     // made with help of tutor Sam Ngu
     $(".time-block>textarea").on('blur', function(event){
-        console.log('blurrrr');
         //  save logic here
         var timeBlock = $(this).parent();
         saveNote(timeBlock);
@@ -11,13 +10,14 @@ $(document).ready(function () {// this will stop moment() not being defined.
     });
     // grabs information to be saved
     function saveNote(blockHourElement){
+
         var text = $(blockHourElement).children('.description').val();
         var time = $(blockHourElement).attr('id');
-        //savs above in local
+        //saves above in local
         console.log('time', time)
         localStorage.setItem(time, text);
-    }
-    
+
+    }   
     //show time and have it running while looking at page
     setInterval(function(){
         $("#currentDay").text(moment().format("MMMM Do YYYY, h:mm:ss a"));
@@ -34,7 +34,18 @@ $(document).ready(function () {// this will stop moment() not being defined.
         // var time = $(this).parent().attr("id");
         
     })
-
+    //listener for the clear button
+    $(".clearBtn").on("click", function () {
+        clearInfo();
+    })
+    //clear information and refresh page
+    function clearInfo () {
+        var confirmClear = confirm("Are you sure you want to clear all data?");
+        if (confirmClear == true) {
+            localStorage.clear();
+            location.reload();
+        }        
+    }
     //load saved data from Local.
     $("#hour6 .description").val(localStorage.getItem("hour6"));
     $("#hour7 .description").val(localStorage.getItem("hour7"));
@@ -47,7 +58,6 @@ $(document).ready(function () {// this will stop moment() not being defined.
     $("#hour14 .description").val(localStorage.getItem("hour14"));
     $("#hour15 .description").val(localStorage.getItem("hour15"));
     $("#hour16 .description").val(localStorage.getItem("hour16"));
-    $("#hour17 .description").val(localStorage.getItem("hour17"));
 
     function trackerHour() {
         //get hour you are in.
