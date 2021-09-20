@@ -7,5 +7,5 @@ I have updated my code to save the information entered automatically.
 There is also a clear all button at the bottom of the screen.
 
 ![Project Screenshot](Assets/Photos/BasicScreen.PNG)
-![Project Screenshot](assets/photos/daySchedulerBeingUsed.PNG)
-![Project Screenshot](assets/photos/daySchedulerClearButton.PNG)
+![Project Screenshot](Assets/Photos/daySchedulerBeingUsed.PNG)
+![Project Screenshot](Assets/Photos/daySchedulerClearButton.PNG)
