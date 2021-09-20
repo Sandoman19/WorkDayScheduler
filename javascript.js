@@ -1,5 +1,7 @@
 $(document).ready(function () {// this will stop moment() not being defined.
 
+    // on blur event used to save infomation to the local without pressing save button
+    // made with help of tutor Sam Ngu
     $(".time-block>textarea").on('blur', function(event){
         console.log('blurrrr');
         //  save logic here
@@ -7,7 +9,7 @@ $(document).ready(function () {// this will stop moment() not being defined.
         saveNote(timeBlock);
 
     });
-
+    // grabs information to be saved
     function saveNote(blockHourElement){
         var text = $(blockHourElement).children('.description').val();
         var time = $(blockHourElement).attr('id');
@@ -16,7 +18,7 @@ $(document).ready(function () {// this will stop moment() not being defined.
         localStorage.setItem(time, text);
     }
     
-    //show time
+    //show time and have it running while looking at page
     setInterval(function(){
         $("#currentDay").text(moment().format("MMMM Do YYYY, h:mm:ss a"));
     }, 1000);
@@ -25,9 +27,9 @@ $(document).ready(function () {// this will stop moment() not being defined.
 
         console.log(this);
         var hourBlock = $(this).parent();
-        
+        // updated to suit on blur event
         saveNote(hourBlock);
-        // old code note required
+        // old code not sure is required to pass homework
         // var text = $(this).siblings(".description").val();
         // var time = $(this).parent().attr("id");
         
